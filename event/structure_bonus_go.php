@@ -2,9 +2,7 @@
 
 ini_set('max_execution_time', 7200);
 
-/*if ($_POST['key'] != 'xgnp3PZVyw74Efj') exit('Error');*/
-
-$CONNECT = mysqli_connect('localhost', 'vertex', '6T6y4W0r', 'vertex');
+$CONNECT = mysqli_connect('localhost', 'vertex', 'pass', 'vertex');
 
 if ( !$CONNECT ) exit('MySQL error');
 
@@ -39,7 +37,7 @@ while ($i < $max) {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_POST => true,
 		CURLOPT_POSTFIELDS => http_build_query(array( 
-			'key' => 'xgnp3PZVyw74Efj',
+			'key' => '*key*',
 			'id' => $i,
 			'val' => 2,
 			's_date' => $structure['change_date'],

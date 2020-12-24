@@ -25,7 +25,7 @@ else {
 	if ( !preg_match('/^[A-z0-9?=-]{3,15}$/', $page) ) not_found();
 }
 
-$CONNECT = mysqli_connect('localhost', 'vertex', '6T6y4W0r', 'vertex');
+$CONNECT = mysqli_connect('localhost', 'vertex', 'pass', 'vertex');
 
 if ( !$CONNECT ) exit('MySQL error');
 
@@ -63,7 +63,6 @@ else not_found();
 
 
 function not_found() {
-	/*include 'all/not_found.php';*/
 	header('location: /');
 }
 

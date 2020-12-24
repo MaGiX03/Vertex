@@ -48,7 +48,7 @@ else if ($_POST['buy_tovar_f']) {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => true,
 			CURLOPT_POSTFIELDS => http_build_query(array( 
-				'key' => 'xgnp3PZVyw74Efj',
+				'key' => '*key*',
 				'id' => $_SESSION['id'],
 				'val' => 1,
 			))
@@ -433,7 +433,7 @@ else if ($_POST['upgrade_paket_f']) {
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_POST => true,
 				CURLOPT_POSTFIELDS => http_build_query(array( 
-					'key' => 'xgnp3PZVyw74Efj',
+					'key' => '*key*',
 					'val' => 3,
 					'id' => $_SESSION['id'],
 					'vp' => $vp,

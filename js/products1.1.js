@@ -23,7 +23,7 @@ function buy_tovar() {
                 const bcrypt = dcodeIO.bcrypt;  
                 const salt = bcrypt.genSaltSync(10);
                 const refIdToPost = `${Date.now()}`;
-                const hash = bcrypt.hashSync(`${refIdToPost}bzHZwWDJwfFzdsfsJcNQ`, salt);   
+                const hash = bcrypt.hashSync(`${refIdToPost}secret_key`, salt);   
 
                 const amountWithCommission = 14000 * 1.03;
 

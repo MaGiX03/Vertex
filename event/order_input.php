@@ -2,7 +2,7 @@
 
 if ($_POST['reference_id'] == '') exit('Error');
 
-$CONNECT = mysqli_connect('localhost', 'vertex', '6T6y4W0r', 'vertex');
+$CONNECT = mysqli_connect('localhost', 'vertex', 'pass', 'vertex');
 
 if ( !$CONNECT ) exit('MySQL error');
 

@@ -554,7 +554,7 @@ else if ($_POST['user_activate_f']) {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => true,
 			CURLOPT_POSTFIELDS => http_build_query(array( 
-				'key' => 'xgnp3PZVyw74Efj',
+				'key' => '*key*',
 				'Uid' => $_POST['id'],
 				'a_status' => $_POST['paket'],
 				'speaker' => $speaker,
@@ -718,7 +718,7 @@ else if ($_POST['upgrade_user_f']) {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => true,
 			CURLOPT_POSTFIELDS => http_build_query(array( 
-				'key' => 'xgnp3PZVyw74Efj',
+				'key' => '*key*',
 				'val' => 3,
 				'id' => $id,
 				'vp' => $vp,

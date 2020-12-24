@@ -2,9 +2,7 @@
 
 ini_set('max_execution_time', 7200);
 
-/*if ($_POST['key'] != 'xgnp3PZVyw74Efj') exit('Error');*/
-
-$CONNECT = mysqli_connect('localhost', 'vertex', '6T6y4W0r', 'vertex');
+$CONNECT = mysqli_connect('localhost', 'vertex', 'pass', 'vertex');
 
 if ( !$CONNECT ) exit('MySQL error');
 
@@ -39,7 +37,7 @@ while ($i < $max) {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => true,
 			CURLOPT_POSTFIELDS => http_build_query(array( 
-				'key' => 'xgnp3PZVyw74Efj',
+				'key' => '*key*',
 				'val' => 2,
 				'id' => $i,
 			))
@@ -53,22 +51,5 @@ while ($i < $max) {
 }
 mysqli_query($CONNECT,"UPDATE settings SET s_value = '$i' WHERE s_name = 'binar' ");
 
-
-
-
-
-
-
-
-/*$test = new SimpleXMLElement($_POST['pg_xml']);
-
-echo $test->pg_amount;*/
-
-/*$CONNECT = mysqli_connect('srv-pleskdb50.ps.kz:3306', 'vertexma_x', 'KNDtd9z42jTNYe7', 'vertexma_main');
-
-if ( !$CONNECT ) exit('MySQL error');
-
-
-mysqli_query($CONNECT, "INSERT INTO `s_bonus_log`(user_id,total_amount,current_amount, money, active_date) VALUES ('$id', 0, 0, 0, '$active_date')");*/
 
 ?>

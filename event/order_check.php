@@ -1,6 +1,6 @@
 <?php
 
-$CONNECT = mysqli_connect('localhost', 'vertex', '6T6y4W0r', 'vertex');
+$CONNECT = mysqli_connect('localhost', 'vertex', 'pass', 'vertex');
 
 if ( !$CONNECT ) exit('MySQL error');
 
@@ -14,14 +14,6 @@ $input = json_decode(file_get_contents("php://input"), true);
 if ($input['reference_id'] == '' || $input['secret_key'] == '' || $input['transaction_id'] == '') exit('Error');
 
 $row = mysqli_fetch_assoc(mysqli_query($CONNECT, "SELECT user_id, product_id, status, amount FROM orders WHERE reference_id = '$input[reference_id]' "));
-/*$secret = 'bzHZwWDJwfFzdsfsJcNQ';
-$hash = password_hash($input['reference_id'].$secret, PASSWORD_BCRYPT, ['cost' => 10]);
-
-if (password_verify($input['reference_id'].$secret, $input['secret_key'])) {
-	
-	mysqli_query($CONNECT, 'INSERT INTO `test`(text, input_date) VALUES ("Error 1 | '.$input['reference_id'].' | '.$input['status'].' | '.$input['secret_key'].' - '.$hash.'", "'.$today.'")');
-	exit('Error');
-}*/
 
 if ($row['status'] == 1) {
 
@@ -45,7 +37,7 @@ if ($input['status'] == 1) {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => true,
 			CURLOPT_POSTFIELDS => http_build_query(array( 
-				'key' => 'xgnp3PZVyw74Efj',
+				'key' => '*key*',
 				'id' => $row['user_id'],
 				'val' => 1,
 			))
@@ -69,7 +61,7 @@ if ($input['status'] == 1) {
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_POST => true,
 				CURLOPT_POSTFIELDS => http_build_query(array( 
-					'key' => 'xgnp3PZVyw74Efj',
+					'key' => '*key*',
 					'Uid' => $row['user_id'],
 					'a_status' => $inf[1],
 					'speaker' => $speaker,
@@ -103,7 +95,7 @@ if ($input['status'] == 1) {
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_POST => true,
 				CURLOPT_POSTFIELDS => http_build_query(array( 
-					'key' => 'xgnp3PZVyw74Efj',
+					'key' => '*key*',
 					'val' => 3,
 					'id' => $row['user_id'],
 					'vp' => $vp,
@@ -125,9 +117,6 @@ if ($input['status'] == 1) {
 	}
 
 }
-/*else {
-	mysqli_query($CONNECT, 'INSERT INTO `test`(text, input_date) VALUES ("'.$input['reference_id'].' | '.$input['status'].' | '.$input['secret_key'].'", "'.$today.'")');
-}*/
 
 $out['status'] = $input['status'];
 

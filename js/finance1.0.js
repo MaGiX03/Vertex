@@ -72,7 +72,7 @@ function popolnit(login) {
 	const bcrypt = dcodeIO.bcrypt;  
 	const salt = bcrypt.genSaltSync(10);
 	const refIdToPost = `${Date.now()}`;
-	const hash = bcrypt.hashSync(`${refIdToPost}bzHZwWDJwfFzdsfsJcNQ`, salt);   
+	const hash = bcrypt.hashSync(`${refIdToPost}secret_key`, salt);   
 
 	const amount = parseFloat($('#p_sum').val())*400;
 	if (amount < 4000 || !amount) {

@@ -130,7 +130,7 @@ function upgrade_paket(a_status) {
 		const bcrypt = dcodeIO.bcrypt;  
 		const salt = bcrypt.genSaltSync(10);
 		const refIdToPost = `${Date.now()}`;
-		const hash = bcrypt.hashSync(`${refIdToPost}bzHZwWDJwfFzdsfsJcNQ`, salt);  
+		const hash = bcrypt.hashSync(`${refIdToPost}secret_key`, salt);  
 
 		const amountWithCommission = amountToPost * 1.03;
 

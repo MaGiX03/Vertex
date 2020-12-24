@@ -5,13 +5,13 @@
 if ($_POST['login_f']) {
 
 	if ($_POST['login'] == 'admin'){
-		if ($_POST['password'] != 'Rossoneri39') message('Неверный пароль или логин');
+		if ($_POST['password'] != 'password') message('Неверный пароль или логин');
 
 		$_SESSION['admin'] = 1;
 		go('a_stats');
 	}
 	if ($_POST['login'] == 'logist'){
-		if ($_POST['password'] != 'Rossoneri36') message('Неверный пароль или логин');
+		if ($_POST['password'] != 'password') message('Неверный пароль или логин');
 
 		$_SESSION['logist'] = 1;
 		go('log_main');
@@ -134,7 +134,7 @@ else if ($_POST['user_activation_f']) {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POST => true,
 			CURLOPT_POSTFIELDS => http_build_query(array(
-				'key' => 'xgnp3PZVyw74Efj',
+				'key' => '*key*',
 				'Uid' => $_SESSION['id'],
 				'a_status' => $_POST['paket'],
 				'speaker' => $speaker,
